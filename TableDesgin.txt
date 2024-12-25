@@ -1,0 +1,50 @@
+Here’s the table design and relationships for your schema:
+
+### Table Design
+
+1. `signup` Table
+   - idno (Primary Key, Auto Increment): Unique identifier for each user.
+   - name: Name of the user.
+   - dob: Date of birth.
+   - emailid: Email ID of the user (unique).
+   - mobilenum: Mobile number (unique).
+   - category: User category (e.g., student, owner, etc.).
+
+2. `booking` Table
+   - bookingid (Primary Key, Auto Increment): Unique identifier for each booking.
+   - booking_date: Date of booking.
+   - payment: Amount paid for booking.
+   - paymentlastdate: Last date for payment.
+   - ownerid (Foreign Key): References `owner_details(ownerid)`; links to the owner.
+   - paymentdone: Boolean flag indicating if payment is completed.
+   - district: District associated with the booking.
+
+3. `owner_details` Table
+   - ownerid (Primary Key, Auto Increment): Unique identifier for each owner.
+   - ownername: Name of the owner.
+   - ownerproof: Proof document for the owner.
+   - owneraddress: Address of the owner.
+   - ownercontact: Contact number of the owner (unique).
+   - amount: Total amount associated with the owner.
+   - oemail: Email of the owner (unique).
+
+4. `accommodation_details` Table
+   - id (Primary Key, Auto Increment): Unique identifier for each accommodation.
+   - city_name: Name of the city where the accommodation is located.
+   - college_name: Name of the nearby college.
+   - accounttype: Type of accommodation (e.g., hostel, PG).
+   - payment: Payment required for the accommodation.
+   - ownerid (Foreign Key): References `owner_details(ownerid)`; links accommodation to the owner.
+
+Relationships
+1. `signup` is a standalone table with no direct relationships to others in this schema.
+2. `owner_details` acts as a central table linked to:
+   - `booking` through the `ownerid` foreign key.
+   - `accommodation_details` through the `ownerid` foreign key.
+3. `booking` records reference the owner associated with a specific booking.
+4. `accommodation_details` records reference the owner managing the accommodation.
+To create a simple console-based Python program for your described schema, I’ll break it down into several parts. The steps would be:
+
+
+
+
