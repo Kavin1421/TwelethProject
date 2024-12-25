@@ -8,8 +8,10 @@ CREATE TABLE signup (
     dob DATE NOT NULL,
     emailid VARCHAR(100) UNIQUE NOT NULL,
     mobilenum VARCHAR(15) UNIQUE NOT NULL,
-    category VARCHAR(50) NOT NULL
+    category VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL 
 );
+
 
 -- Creating Booking Table
 CREATE TABLE booking (
@@ -58,3 +60,24 @@ SELECT * FROM owner_details;
 
 -- Retrieve all accommodation details
 SELECT * FROM accommodation_details;
+
+commit;
+
+
+-- Sample Insert Statements
+-- 1. Inserting Data into owner_details
+-- Here are some sample records for the owner_details table:
+-- sql
+INSERT INTO owner_details (ownername, ownerproof, owneraddress, ownercontact, amount, oemail) VALUES 
+('John Doe', 'Passport', '123 Elm St, Springfield', '9876543210', 1000.00, 'john.doe@example.com'),
+('Jane Smith', 'Driver License', '456 Oak St, Springfield', '8765432109', 1500.00, 'jane.smith@example.com'),
+('Alice Johnson', 'Aadhar Card', '789 Pine St, Springfield', '7654321098', 1200.00, 'alice.johnson@example.com'),
+('Bob Brown', 'Voter ID', '321 Maple St, Springfield', '6543210987', 900.00, 'bob.brown@example.com');
+-- 2. Inserting Data into accommodation_details
+-- Here are some sample records for the accommodation_details table:
+-- sql
+INSERT INTO accommodation_details (city_name, college_name, accounttype, payment, ownerid) VALUES 
+('Springfield', 'Springfield University', 'Rent', 500.00, 1),  -- John Doe
+('Springfield', 'Springfield College', 'Lease', 750.00, 2),   -- Jane Smith
+('Shelbyville', 'Shelbyville Institute', 'Rent', 600.00, 3), -- Alice Johnson
+('Capital City', 'Capital City University', 'Lease', 800.00, 4); -- Bob Brown
