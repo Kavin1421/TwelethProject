@@ -12,6 +12,16 @@ CREATE TABLE signup (
     password VARCHAR(255) NOT NULL 
 );
 
+-- Creating Owner Details Table
+CREATE TABLE owner_details (
+    ownerid INT AUTO_INCREMENT PRIMARY KEY,
+    ownername VARCHAR(100) NOT NULL,
+    ownerproof VARCHAR(255) NOT NULL,
+    owneraddress TEXT NOT NULL,
+    ownercontact VARCHAR(15) UNIQUE NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    oemail VARCHAR(100) UNIQUE NOT NULL
+);
 
 -- Creating Booking Table
 CREATE TABLE booking (
@@ -23,17 +33,6 @@ CREATE TABLE booking (
     paymentdone BOOLEAN DEFAULT FALSE,
     district VARCHAR(100) NOT NULL,
     FOREIGN KEY (ownerid) REFERENCES owner_details(ownerid) ON DELETE CASCADE
-);
-
--- Creating Owner Details Table
-CREATE TABLE owner_details (
-    ownerid INT AUTO_INCREMENT PRIMARY KEY,
-    ownername VARCHAR(100) NOT NULL,
-    ownerproof VARCHAR(255) NOT NULL,
-    owneraddress TEXT NOT NULL,
-    ownercontact VARCHAR(15) UNIQUE NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
-    oemail VARCHAR(100) UNIQUE NOT NULL
 );
 
 -- Creating Accommodation Details Table
