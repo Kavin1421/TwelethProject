@@ -27,7 +27,7 @@ Welcome to the House Booking System! This application allows users to sign up, l
 ### Step 1: Clone the Repository
 
 ```
-git clone https://github.com/yourusername/HouseBookingSystem.git
+git clone https://github.com/Kavin1421/TwelethProject.git
 cd HouseBookingSystem
 ```
 
